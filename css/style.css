@@ -1,13 +1,89 @@
-*. {
-  color: aliceblue;
+.navbar {
+  background-color: transparent;
+  position: fixed; /* Ubah dari absolute ke fixed */
+  top: 0; /* Tambahkan ini */
+  left: 0; /* Tambahkan ini */
+  width: 100%;
+  z-index: 1030; /* Naikkan z-index untuk memastikan navbar di atas carousel */
+  padding: 1rem 0; /* Tambahkan padding agar navbar lebih terlihat */
 }
 
-.ul {
-  color: aliceblue;
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.95); /* Tingkatkan opasitas sedikit */
+  backdrop-filter: blur(5px); /* Tambahkan efek blur */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan halus */
+  transition: all 0.3s ease;
 }
-*ul {
-  color: aliceblue;
+
+/* Tambahkan warna teks yang kontras */
+.navbar-light .navbar-nav .nav-link {
+  color: white; /* Warna teks default */
+  font-weight: 500; /* Sedikit lebih tebal agar lebih terlihat */
 }
-ul {
-  color: aliceblue;
+
+/* Warna teks saat navbar di-scroll */
+.navbar.scrolled .navbar-nav .nav-link {
+  color: #000; /* Ubah ke hitam saat background menjadi putih */
+}
+
+/* Sesuaikan juga warna brand */
+.navbar-brand {
+  color: white !important;
+}
+
+.navbar.scrolled .navbar-brand {
+  color: #000 !important;
+}
+
+/* Pastikan carousel dimulai dari atas halaman */
+.carousel {
+  margin-top: 0;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Sesuaikan tombol toggler untuk tampilan mobile */
+.navbar-toggler {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.carousel-caption {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+}
+
+/* Style untuk judul */
+.carousel-caption h1 {
+  font-size: 4rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem;
+}
+
+footer {
+  position: relative; /* Mengatur posisi footer relatif */
+  padding: 20px 0; /* Padding atas dan bawah */
+  background-color: #f8f9fa; /* Warna latar belakang */
+  text-align: center; /* Teks di tengah */
+}
+
+.footer .container {
+  max-width: 1200px; /* Lebar maksimum kontainer */
+  margin: 0 auto; /* Centering kontainer */
+}
+
+.text-muted {
+  color: #6c757d; /* Warna teks abu-abu */
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 2.5rem;
+  }
 }
